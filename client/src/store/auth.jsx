@@ -2,7 +2,6 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext();
 
-// eslint-disable-next-line react/prop-types
 export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [user, setUser] = useState("");
@@ -11,7 +10,6 @@ export const AuthProvider = ({ children }) => {
   const authorizationToken = `Bearer ${token}`;
 
   // const API = "http://localhost:5000";
-  // const API = "https://api.thapatechnical.site";
   const API = import.meta.env.VITE_APP_URI_API;
 
   const storeTokenInLS = (serverToken) => {
@@ -22,13 +20,11 @@ export const AuthProvider = ({ children }) => {
   let isLoggedIn = !!token;
   console.log("isLoggedIN ", isLoggedIn);
 
-  // tackling the logout functionality
   const LogoutUser = () => {
     setToken("");
     return localStorage.removeItem("token");
   };
 
-  // JWT AUTHENTICATION - to get the currently loggedIN user data
 
   const userAuthentication = async () => {
     try {
@@ -54,7 +50,6 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // to fetch the services data from the database
   const getServices = async () => {
     try {
       const response = await fetch(`${API}/api/data/service`, {
@@ -76,7 +71,6 @@ export const AuthProvider = ({ children }) => {
     userAuthentication();
   }, []);
 
-  //please subs to thapa technical channel .. also world best js course is coming soon
 
   return (
     <AuthContext.Provider

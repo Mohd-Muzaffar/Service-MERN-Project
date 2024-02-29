@@ -1,9 +1,6 @@
 const User = require("../models/user-model");
 const bcrypt = require("bcryptjs");
 
-// *-------------------
-// Home Logic
-// *-------------------
 
 const home = async (req, res) => {
   try {
@@ -17,18 +14,6 @@ const home = async (req, res) => {
   }
 };
 
-// *-------------------
-// Registration Logic
-// *-------------------
-// *-------------------------------
-//* User Registration Logic 📝
-// *-------------------------------
-// 1. Get Registration Data: 📤 Retrieve user data (username, email, password).
-// 2. Check Email Existence: 📋 Check if the email is already registered.
-// 3. Hash Password: 🔒 Securely hash the password.
-// 4. Create User: 📝 Create a new user with hashed password.
-// 5. Save to DB: 💾 Save user data to the database.
-// 6. Respond: ✅ Respond with "Registration Successful" or handle errors.
 
 const register = async (req, res) => {
   try {
@@ -40,8 +25,6 @@ const register = async (req, res) => {
     if (userExist) {
       return res.status(400).json({ message: "email already exists" });
     }
-
-    // hash the password
     // const saltRound = 10;
     // const hash_password = await bcrypt.hash(password, saltRound);
 
@@ -58,17 +41,11 @@ const register = async (req, res) => {
       userId: userCreated._id.toString(),
     });
   } catch (error) {
-    // res.status(500).json("internal server error");
     console.log(req.body);
     next(error);
   }
 };
 
-// In most cases, converting _id to a string is a good practice because it ensures consistency and compatibility across different JWT libraries and systems. It also aligns with the expectation that claims in a JWT are represented as strings.
-
-// *-------------------------------
-//* User Login Logic 📝
-// *-------------------------------
 
 const login = async (req, res) => {
   try {
@@ -98,9 +75,6 @@ const login = async (req, res) => {
   }
 };
 
-// *-------------------------------
-//* to send user data - User Logic 📝
-// *-------------------------------
 
 const user = async (req, res) => {
   try {

@@ -23,7 +23,6 @@ export const AdminUsers = () => {
     }
   };
 
-  //   delelte the user on delete button
   const deleteUser = async (id) => {
     try {
       const response = await fetch(`${API}/api/admin/users/delete/${id}`, {

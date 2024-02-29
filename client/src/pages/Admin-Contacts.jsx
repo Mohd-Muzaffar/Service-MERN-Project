@@ -24,7 +24,6 @@ export const AdminContacts = () => {
     }
   };
 
-  // defining the funciton deleteContactById
 
   const deleteContactById = async (id) => {
     try {

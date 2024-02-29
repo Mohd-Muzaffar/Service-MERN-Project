@@ -72,7 +72,7 @@ export const Login = () => {
                 />
               </div>
 
-              {/* let tackle registration form  */}
+              
               <div className="registration-form">
                 <h1 className="main-heading mb-3">login form</h1>
                 <br />

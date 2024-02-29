@@ -25,9 +25,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-//? secure the password with the bcrypt
 userSchema.pre("save", async function (next) {
-  // console.log("pre method", this);
   const user = this;
 
   if (!user.isModified("password")) {
@@ -43,12 +41,10 @@ userSchema.pre("save", async function (next) {
   }
 });
 
-// compare the password
 userSchema.methods.comparePassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-// json web token
 userSchema.methods.generateToken = async function () {
   try {
     return jwt.sign(
@@ -67,6 +63,5 @@ userSchema.methods.generateToken = async function () {
   }
 };
 
-// define the model or the collection name
 const User = new mongoose.model("User", userSchema);
 module.exports = User;

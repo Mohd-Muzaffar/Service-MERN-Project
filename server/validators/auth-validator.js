@@ -13,7 +13,6 @@ const loginSchema = z.object({
     .max(1024, "Password can't be greater than 1024 characters"),
 });
 
-// Creating an object schema
 const signupSchema = loginSchema.extend({
   username: z
     .string({ required_error: "Name is required" })

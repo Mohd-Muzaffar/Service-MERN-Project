@@ -16,7 +16,6 @@ export const Register = () => {
 
   const URL = `${API}/api/auth/register`;
 
-  // handling the input values
   const handleInput = (e) => {
     console.log(e);
     let name = e.target.name;
@@ -28,7 +27,6 @@ export const Register = () => {
     });
   };
 
-  // handling the form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(user);
@@ -45,7 +43,6 @@ export const Register = () => {
       console.log("res from server", res_data.extraDetails);
 
       if (response.ok) {
-        // stored the token in localhost
         storeTokenInLS(res_data.token);
         setUser({ username: "", email: "", phone: "", password: "" });
         toast.success("Registration successful");
@@ -74,8 +71,6 @@ export const Register = () => {
                   height="500"
                 />
               </div>
-
-              {/* let tackle registration form  */}
               <div className="registration-form">
                 <h1 className="main-heading mb-3">registration form</h1>
                 <br />

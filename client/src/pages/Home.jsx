@@ -25,7 +25,7 @@ export const Home = () => {
               </div>
             </div>
 
-            {/* hero images  */}
+            
             <div className="hero-image">
               <img
                 src="/images/home.png"
@@ -38,13 +38,13 @@ export const Home = () => {
         </section>
       </main>
 
-      {/* 2nd section  */}
+      
       <Analytics />
 
-      {/* 3rd section  */}
+      
       <section className="section-hero">
         <div className="container grid grid-two-cols">
-          {/* hero images  */}
+          
           <div className="hero-image">
             <img
               src="/images/design.png"
@@ -60,7 +60,7 @@ export const Home = () => {
             <p>
               Ready to take the first step towards a more efficient and secure
               IT infrastructure? Contact us today for a free consultation and
-              lets discuss how Thapa Technical can help your business thrive in
+              lets discuss how Mujaffar can help your business thrive in
               the digital age.
             </p>
             <div className="btn btn-group">

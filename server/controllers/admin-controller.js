@@ -1,9 +1,7 @@
 const User = require("../models/user-model");
 const Contact = require("../models/contact-model");
 
-// *-------------------------------
-//* getAllUsers Logic 📝
-// *-------------------------------
+
 const getAllUsers = async (req, res) => {
   try {
     const users = await User.find({}, { password: 0 });
@@ -17,9 +15,6 @@ const getAllUsers = async (req, res) => {
   }
 };
 
-// *-------------------------------
-//* single user Logic 📝
-// *-------------------------------
 
 const getUserById = async (req, res) => {
   try {
@@ -31,9 +26,6 @@ const getUserById = async (req, res) => {
   }
 };
 
-// *-------------------------------
-//* user update Logic 📝
-// *-------------------------------
 
 const updateUserById = async (req, res) => {
   try {
@@ -52,9 +44,6 @@ const updateUserById = async (req, res) => {
   }
 };
 
-// *-------------------------------
-//* user delete Logic 📝
-// *-------------------------------
 
 const deleteUserById = async (req, res) => {
   try {
@@ -66,9 +55,6 @@ const deleteUserById = async (req, res) => {
   }
 };
 
-// *-------------------------------
-//* getAllContacts Logic 📝
-// *-------------------------------
 const getAllContacts = async (req, res) => {
   try {
     const contacts = await Contact.find();
@@ -82,9 +68,7 @@ const getAllContacts = async (req, res) => {
   }
 };
 
-// *-------------------------------
-//* contacts delete Logic 📝
-// *-------------------------------
+
 
 const deleteContactById = async (req, res) => {
   try {

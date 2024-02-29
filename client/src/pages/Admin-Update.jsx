@@ -14,7 +14,6 @@ export const AdminUpdate = () => {
   console.log("params single user: ", params);
   const { authorizationToken, API } = useAuth();
 
-  //   get single user data
   const getSingleUserData = async () => {
     try {
       const response = await fetch(`${API}/api/admin/users/${params.id}`, {
@@ -26,10 +25,6 @@ export const AdminUpdate = () => {
       const data = await response.json();
       console.log(`users single data:  ${data}`);
       setData(data);
-
-      //   if (response.ok) {
-      //     getAllUsersData();
-      //   }
     } catch (error) {
       console.log(error);
     }
@@ -49,7 +44,6 @@ export const AdminUpdate = () => {
     });
   };
 
-  // to udpate the data dynamically
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -81,9 +75,7 @@ export const AdminUpdate = () => {
       <div className="contact-content container">
         <h1 className="main-heading">Update User Data</h1>
       </div>
-      {/* contact page main  */}
       <div className="container grid grid-two-cols">
-        {/* contact form content actual  */}
         <section className="section-form">
           <form onSubmit={handleSubmit}>
             <div>
